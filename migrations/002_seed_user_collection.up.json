@@ -1,0 +1,43 @@
+[
+  {
+    "insert": "user",
+    "documents": [
+      {
+        "id": {
+          "$binary": {
+            "base64": "M8UY0Zg0Trmc1ycd9+gGgw==",
+            "subType": "00"
+          }
+        },
+        "name": "Jon Doe",
+        "username": "jon.doe",
+        "password": "jon.doe",
+        "role": "user",
+        "created_at": {
+          "$numberLong": "1684049805"
+        },
+        "updated_at": {
+          "$numberLong": "1684049805"
+        }
+      },
+      {
+        "id": {
+          "$binary": {
+            "base64": "Ane30eH6Rd26a2mMn9K23w==",
+            "subType": "00"
+          }
+        },
+        "name": "Don Juan",
+        "username": "don.juan",
+        "password": "don.juan",
+        "role": "admin",
+        "created_at": {
+          "$numberLong": "1684049805"
+        },
+        "updated_at": {
+          "$numberLong": "1684049805"
+        }
+      }
+    ]
+  }
+]

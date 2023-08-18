@@ -1,0 +1,7 @@
+{
+  "server_port": 0,
+  "database_name": ",
+  "database_uri": "",
+  "secret_key": "",
+  "default_timeout_in_second": 0
+}

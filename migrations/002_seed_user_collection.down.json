@@ -1,0 +1,9 @@
+[
+  {
+    "delete": "users",
+    "deletes": [
+      { "q": { "name": "Jon Doe" }, "limit": 1 },
+      { "q": { "name": "Don Juan" }, "limit": 1 }
+    ]
+  }
+]
