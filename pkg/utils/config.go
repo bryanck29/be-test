@@ -2,7 +2,7 @@ package utils
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"log"
 	"os"
 
@@ -16,7 +16,7 @@ func LoadEnv() {
 	}
 	defer cfgFile.Close()
 
-	byteValue, _ := ioutil.ReadAll(cfgFile)
+	byteValue, _ := io.ReadAll(cfgFile)
 	err = json.Unmarshal(byteValue, &config.Core)
 	if err != nil {
 		log.Fatalln(err)

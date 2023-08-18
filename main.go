@@ -17,8 +17,6 @@ import (
 // @title			API Docs
 // @version		1.0
 // @description	Swagger API Docs.
-//
-// @BasePath		/v1
 func main() {
 	server := initApp.InitApp()
 

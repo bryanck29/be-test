@@ -11,10 +11,10 @@ build:
 	go build -o backend-test
 
 migrate-up: 
-	migrate -path migration -database "$(DB_URI)" up
+	migrate -path migrations -database "$(DB_URI)" up
 
 migrate-down:
-	migrate -path migration -database "$(DB_URI)" -verbose down
+	migrate -path migrations -database "$(DB_URI)" -verbose down
 
 server:
 	rm -rf docs

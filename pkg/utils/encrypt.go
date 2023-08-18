@@ -4,6 +4,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 	"encoding/base64"
+	"strings"
 )
 
 var bytesData = []byte{35, 46, 57, 24, 85, 35, 24, 74, 87, 35, 88, 98, 66, 32, 14, 05}
@@ -20,13 +21,11 @@ func Decode(s string) []byte {
 	return data
 }
 
-var Encrypt = func(text, MySecret string) (string, error) {
-	if len(MySecret) < 16 {
-		for i := 0; i < 16-len(MySecret); i++ {
-			MySecret += "."
-		}
+var Encrypt = func(text, secret string) (string, error) {
+	if len(secret) < 16 {
+		secret += strings.Repeat(".", 16-len(secret))
 	}
-	block, err := aes.NewCipher([]byte(MySecret))
+	block, err := aes.NewCipher([]byte(secret))
 	if err != nil {
 		return "", err
 	}
@@ -37,13 +36,11 @@ var Encrypt = func(text, MySecret string) (string, error) {
 	return Encode(cipherText), nil
 }
 
-var Decrypt = func(text, MySecret string) (string, error) {
-	if len(MySecret) < 16 {
-		for i := 0; i < 16-len(MySecret); i++ {
-			MySecret += "."
-		}
+var Decrypt = func(text, secret string) (string, error) {
+	if len(secret) < 16 {
+		secret += strings.Repeat(".", 16-len(secret))
 	}
-	block, err := aes.NewCipher([]byte(MySecret))
+	block, err := aes.NewCipher([]byte(secret))
 	if err != nil {
 		return "", err
 	}

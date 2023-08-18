@@ -25,3 +25,6 @@ config.json
 
 # Swagger docs
 /docs
+
+# Log files
+error-*.log
